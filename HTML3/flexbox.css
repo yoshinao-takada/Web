@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    background-color: blue;
+    max-width: 1000px;
+}
+
+.one {
+    flex: 1;
+    background-color: cyan;
+    margin: 10px;
+}
+
+.two {
+    flex: 2;
+    background-color: cyan;
+    margin: 10px;
+}
+
+.three {
+    flex: 1;
+    background-color: cyan;
+    margin: 10px;
+}

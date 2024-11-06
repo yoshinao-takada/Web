@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>EditableShape.html</title>
+        <link rel="stylesheet" type="text/css" href="EditableShape.css" />
+        <script type="module">
+            import { DrawEditableShapes } from "./JSLib/DrawEditableShapes.js";
+            window.onload = function() {
+                DrawEditableShapes.scenario1();
+                alert("Test drawing completed.");
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="640" height="480">
+            Your browser does not support canvas.
+        </canvas>
+        <div>
+            <p>mouse coord = <span id="mouse_coord">(0,0)</span></p>
+        </div>
+    </body>
+</html>

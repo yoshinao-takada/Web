@@ -1,0 +1,24 @@
+#menu li {
+    font-size: 1.5em;
+    list-style-type: none;
+    width: 5em;
+    text-align: center;
+    margin-left: 1em;
+    border: 0.2em solid blue;
+    background-color: transparent;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    display: blcok;
+    /* background-color: #EEEEFF; */
+    box-shadow: 0.5em 0.5em 0.5em gray;
+    margin-bottom: 0.2em;
+}
+
+#menu a:hover {
+    background-color: #DDDDEE;
+    box-sizing: 0.3em 0.3em 0.3em gray;
+    border: none;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>mouse.html</title>
+        <script type="application/javascript">
+            let fileHandles;
+            let fileHandle;
+            let directoryHandle;
+            async function elementClicked(event) {
+                let id = event.target.id;
+                let handle;
+                if (id === 'paragraph1') {
+                    try {
+                        fileHandles = await window.showOpenFilePicker();
+                        fileHandle = fileHandles[0];
+                        let file = await fileHandle.getFile();
+                        console.log(`file.name = ${file.name}`);
+                        let ext = file.name.split('.').pop();
+                        console.log(`file extension = ${ext}`);
+                        if (ext === 'txt') {
+                            let reader = new FileReader();
+                            reader.addEventListener("loadend", (event) => {
+                                console.log(reader.result);
+                                console.log('-------------------------');
+                                console.log(event.target.result);
+                            });
+                            reader.readAsText(file);
+                        }
+                    } catch (ex) {
+                        console.log(ex);
+                    }
+                } else if (id === 'paragraph2') {
+                    try {
+                        fileHandle = await window.showSaveFilePicker();
+                        let writeStream = await fileHandle.createWritable();
+                        for (let i = 0; i < 10; i++) {
+                            await writeStream.write(`${i}\n`);
+                        }
+                        await writeStream.close();
+                        let file = await fileHandle.getFile();
+                        console.log(`write \"${file.name}\" done`);
+                    } catch (ex) {
+                        console.log(ex);
+                    }
+                } else if (id === 'paragraph3') {
+                    try {
+                        directoryHandle = await window.showDirectoryPicker();
+                    } catch (ex) {
+                        console.log(ex);
+                    }
+                    console.log(directoryHandle);
+                }
+
+
+            }
+        </script>
+    </head>
+    <body onclick="elementClicked(event)" id="body1">
+        <div id="div1">
+            <p id="paragraph1">Open File</p>
+            <p id="paragraph2">Save File</p>
+            <p id="paragraph3">Open Directory</p>
+        </div>
+    </body>
+</html>

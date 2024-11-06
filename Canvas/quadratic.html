@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="canvasStyle.css"/>
+        <script>
+            window.onload = function() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                let w = canvas.clientWidth;
+                let h = canvas.clientHeight;
+
+                //
+                // draw stuff here
+                //
+                let points = [
+                    { x : w /3 , y : h / 3 },
+                    { x : w / 2, y : h / 3 },
+                    { x : 2 * w / 3, y : h },
+                ];
+                context.strokeStyle = "blue";
+                context.setLineDash([3, 5, 20, 5]);
+                context.beginPath();
+                context.moveTo(points[0].x, points[0].y);
+                context.quadraticCurveTo(points[1].x, points[1].y, points[2].x, points[2].y);
+                context.stroke();
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="600" height="250"></canvas>
+    </body>
+</html>

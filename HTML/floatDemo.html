@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>floatDemo.html</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div {
+                border: 2px black solid;
+            }
+            #col1 {
+                float: left;
+                width: 25%;
+                padding: 2em;
+            }
+            #col2 {
+                float: left;
+                width: 20%;
+                padding: 2em;
+            }
+            #col3 {
+                float: left;
+                width: 20%;
+                padding: 2em;
+            }
+            #col4 {
+                float: left;
+                width: 18%;
+                padding: 2em;
+            }
+            #rownext {
+                clear: both;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Float Demo</h1>
+        <div id="col1">
+            Paragraph 1.
+            This paragraph has the normal behavior of a block-level element.
+            It occupies the entire width of the page, and the next element
+            is placed underneath.
+        </div>
+        <div id="col2">
+            Paragraph 2.
+            This paragraph is floated left. It is placed to the left, and the
+            next element will be placed to the righht of it.
+        </div>
+        <div id="col3">
+            Paragraph 3.
+            This paragraph has no floating, width or margin. It takes whatever space
+            it can to the right of the floated element, and then flows to the next
+            line.
+        </div>
+        <div id="col4">
+            Paragraph 4.
+            This paragraph has floated center. It is placed at the center.
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        </div>
+        <div id="rownext">
+            Paragraph 5.
+            This paragraph span full-width. It is placed beneath paragraphs 1
+            through 4.
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>CH7EX3: Audio Properties and Thee Canvas</title>
+        <script type="text/javascript">
+            var audioElement;
+            var loadingStatus;
+            var percentLoaded;
+            var theCanvas;
+            var context;
+
+
+            window.addEventListener('load', eventWindowLoaded, false);
+            function eventWindowLoaded() {
+                audioElement = document.getElementById("theAudio");
+                audioElement.addEventListener("progress", updateLoadingStatus, false);
+                audioElement.addEventListener("canplaythrough", audioLoaded, false);
+                audioElement.looad();
+            }
+
+            function updateLoadingStatus() {
+                loadingStatus = document.getElementById("loadingStatus");
+                audioElement = document.getElementById("theAudio");
+                percentLoaded = parseInt((audioElement.currentTime / audioElement.duration) *100);
+                document.getElementById("loadingStatus").innerHTML = 'loaded ' + percentLoaded + '%';
+            }
+
+            function audioLoaded() {
+                canvasApp();
+            }
+
+            function canvasApp() {
+                theCanvas = document.getElementById("canvasOne");
+                context = theCanvas.getContext("2d");
+                audioElement = document.getElementById("theAudio");
+
+                function drawScreen() {
+                    // background
+                    context.fillStyle = "#ffffaa";
+                    context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+
+                    // Box
+                    context.strokeStyle = "#000000";
+                    context.strokeRect(5, 5, theCanvas.width - 10, theCanvas.height - 10);
+
+                    // Text
+                    context.fillStyle = "#000000";
+                    context.fillText("Duration: " + audioElement.duration, 20, 20);
+                    context.fillText("Current time: " + audioElement.currentTime, 20, 40);
+                    context.fillText("Loop: " + audioElement.loop, 20, 60);
+                    context.fillText("Autoplay: " + audioElement.autoplay, 20, 80);
+                    context.fillText("Muted: " + audioElement.muted, 20, 100);
+                    context.fillText("Controls: " + audioElement.controls, 20, 120);
+                }
+                audioElement.play();
+
+                setInterval(drawScreen, 1000);
+                setInterval(updateLoadingStatus, 1000);
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; top: 50px; left: 50px;">
+            <canvas id="canvasOne" width="500" height="300">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+        </div>
+        <div id="loadingStatus">
+            0%
+        </div>
+        <div style="position: absolute; top: 50px; left: 600px;">
+            <audio id="theAudio" controls>
+                <source src="creative-technology-showreel-241274.mp3" type="audio/mp3"/>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </body>
+</html>

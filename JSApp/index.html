@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>index.html</title>
+        <script type="module">
+            import {RBlasUT} from "./JSLib/RBlasUT.js";
+            import {RMatrixUT} from "./JSLib/RMatrixUT.js";
+            import {Geom2DUT} from "./JSLib/Geom2DUT.js";
+            window.onload = function() {
+                RBlasUT.allUT();
+                RMatrixUT.allUT();
+                Geom2DUT.allUT();
+                window.alert("UT completed.");
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

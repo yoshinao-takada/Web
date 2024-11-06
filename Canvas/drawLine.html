@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="canvasStyle.css"/>
+        <script>
+            window.onload = drawLines;
+            
+            function drawLines() {
+                let canvas = document.getElementById("myCanvas");
+                let context = canvas.getContext("2d");
+
+                let lineLength = canvas.clientWidth / 3;
+                let lineY = [
+                    canvas.clientHeight / 4,
+                    canvas.clientHeight / 2,
+                    3 * canvas.clientHeight / 4,
+                ];
+                let lineCaps = [ "butt", "round", "square" ];
+                let centerX = canvas.clientWidth / 2;
+
+                //
+                // draw stuff here
+                //
+                context.lineWidth = 30;
+                context.strokeStyle = "blue";
+                for (let i = 0; i < lineY.length; i++) {
+                    context.lineCap = lineCaps[i];
+                    context.beginPath();
+                    context.moveTo(centerX - lineLength / 2, lineY[i]);
+                    context.lineTo(centerX + lineLength / 2, lineY[i]);
+                    context.stroke();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="600" height="250" ></canvas>
+    </body>
+</html>

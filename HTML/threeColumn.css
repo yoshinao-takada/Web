@@ -1,0 +1,35 @@
+#head {
+    text-align: center;
+}
+
+#left {
+    float: left;
+    width: 20%;
+    padding-left: 1%;
+    background-color: yellow;
+    min-height: 10em;
+}
+
+#center {
+    float: left;
+    width: 60%;
+    padding-left: 1%;
+    background-color: lime;
+    min-height: 10em;
+}
+
+#right {
+    float: left;
+    width: 17%;
+    padding-left: 1%;
+    background-color: lightgray;
+    min-height: 10em;
+}
+
+#footer {
+    border: 1px black solid;
+    float: left;
+    width: 100%;
+    clear: both;
+    text-align:center;
+}

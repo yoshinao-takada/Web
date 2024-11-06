@@ -1,0 +1,35 @@
+.multicol {
+    position: relative;
+    margin: auto;
+    max-width: 1100px;
+    columns: 3 15em;
+    column-gap: 1.5em;
+    column-rule: 2px solid red;
+}
+.multicol p {
+    padding: 0.25em;
+}
+.multicol figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.multicol figcaption {
+    color: #999;
+    font-size: 0.7em;
+}
+
+.multicol img {
+    width: 100%;
+}
+
+.multicol h1 {
+    column-span: all;
+    margin: 0.25em 0;
+    padding: 0;
+}
+
+.multicol h2 {
+    margin: 0.25em 0;
+    padding: 0;
+}

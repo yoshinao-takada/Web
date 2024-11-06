@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>relabs2.html</title>
+    </head>
+    <body>
+        <style>
+            .relative {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background: red;
+                margin: 30px;
+            }
+            #absolute1 {
+                position : absolute;
+                top: 100px;
+                left: 200px;
+                width:100px;
+                height: 100px;
+                background: yellow;
+                margin: 30px;
+            }
+            #absolute2 {
+                position : absolute;
+                top: 50px;
+                left: 100px;
+                width:100px;
+                height: 100px;
+                background: purple;
+                margin: 30px;
+            }
+            #absolute3 {
+                position : absolute;
+                top: 100px;
+                left: 200px;
+                width:100px;
+                height: 100px;
+                background: yellow;
+                margin: 30px;
+            }
+        </style>
+        <div class="relative">
+            Element 1
+            <div id="absolute1">Element 4</div>
+        </div>
+        <div class="relative">Element 2</div>
+        <div class="relative">
+            Element 3
+            <div id="absolute2">Element 5</div>
+        </div>
+        <div id="absolute3">Element 6</div>
+    </body>
+</html>
